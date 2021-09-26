@@ -1,1 +1,22 @@
 <h2>Models List</h2>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Added date</th>
+  </tr>
+  <ng-container *ngIf="(modelsList$ | async) as responseArray">
+    <ng-container *ngFor="let modelResponse of responseArray">
+      <tr routerLink="/list/{{modelResponse._id}}">
+        <td>{{modelResponse._id}}</td>
+        <td>{{modelResponse.name}}</td>
+        <td>{{modelResponse.description}}</td>
+        <td>{{modelResponse.date}}</td>
+      </tr>
+    </ng-container>
+
+  </ng-container>
+
+</table>

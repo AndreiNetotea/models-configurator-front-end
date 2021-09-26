@@ -9,7 +9,7 @@ const pagesRoutes: Routes = [
       component: ModelsListComponent
   },
   {
-      path: 'list/:model-id',
+      path: 'list/:modelId',
       component: ModelEditorComponent
   }
 ]
