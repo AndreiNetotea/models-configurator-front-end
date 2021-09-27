@@ -6,6 +6,7 @@
     <th>Name</th>
     <th>Description</th>
     <th>Added date</th>
+    <th>Delete</th>
   </tr>
   <ng-container *ngIf="(modelsList$ | async) as responseArray">
     <ng-container *ngFor="let modelResponse of responseArray">
@@ -13,7 +14,8 @@
         <td>{{modelResponse._id}}</td>
         <td>{{modelResponse.name}}</td>
         <td>{{modelResponse.description}}</td>
-        <td>{{modelResponse.date}}</td>
+        <td>{{modelResponse.dateAdded | date:'fullTime'}}</td>
+        <td (click)="$event.stopPropagation()"><button (click)="deleteModel(modelResponse)">delte</button></td>
       </tr>
     </ng-container>
 

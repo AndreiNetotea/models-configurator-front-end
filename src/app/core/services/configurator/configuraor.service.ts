@@ -12,8 +12,12 @@ export class ConfiguratorService {
     return this.http.get<ConfiguratorInterface[]>(this.backendUrl);
   }
 
-  public getConfigurator(id: string): Observable<ConfiguratorInterface[]> {
-    return this.http.get<ConfiguratorInterface[]>(this.backendUrl + '/' + id);
+  public getConfigurator(id: string): Observable<ConfiguratorInterface> {
+    return this.http.get<ConfiguratorInterface>(this.backendUrl + '/' + id);
+  }
+
+  public deleteConfigurator(id: string): Observable<void> {
+    return this.http.delete<void>(this.backendUrl + '/' + id);
   }
 
 }
